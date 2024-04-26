@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from config.config import get_db
 from config.schema import UserInModel, UserOutModel
 from models.models import User
-import re
 
 
 user = APIRouter()
@@ -16,14 +15,4 @@ async def create_user(user: UserInModel, db: Session = Depends(get_db) ):
     db.commit()
     db.refresh(new_user)
 
-    return {
-        "id": new_user.id,
-        "data": {
-            "username": new_user.username,
-            "email": new_user.email
-        }
-    }
-
-
-@user.post("/user/tokenize")
-async def tokenize
+    
