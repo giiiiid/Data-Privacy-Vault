@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from config.config import get_db
 from config.schema import UserInModel, UserOutModel
 from models.models import User
-from config.config import encrypt_data, decrypt_data, cipher, key
+from config.config import encrypt_data, decrypt_data
 
 
 user = APIRouter()

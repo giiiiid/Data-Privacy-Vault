@@ -8,12 +8,12 @@ class User(Base):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String)
-    username_tag = Column(bytes)
+    username_tag = Column(String)
     email = Column(String)
-    email_tag = Column(bytes)
+    email_tag = Column(String)
     password = Column(String)
-    password_tag = Column(bytes)
-    created_at = Column(DateTime, default=datetime.now(datetime.UTC))
+    password_tag = Column(String)
+    # created_at = Column(DateTime, default=datetime.now(datetime.UTC))
 
     def __repr__(self):
         return f"User>>>>{self.uername}, {self.email}"
